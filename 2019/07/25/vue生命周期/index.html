@@ -102,11 +102,13 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/1.png">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/2.png">
+<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/7.png">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/3.png">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/4.png">
+<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/7.png">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/5.png">
 <meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/6.png">
-<meta property="og:updated_time" content="2019-07-25T08:33:58.584Z">
+<meta property="og:updated_time" content="2019-07-25T08:58:57.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue生命周期">
 <meta name="twitter:description" content="关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。">
@@ -368,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 15:48:32 / 修改时间：16:33:58" itemprop="dateCreated datePublished" datetime="2019-07-25T15:48:32+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 15:48:32 / 修改时间：16:58:57" itemprop="dateCreated datePublished" datetime="2019-07-25T15:48:32+08:00">2019-07-25</time>
             </span>
           
 
@@ -420,6 +422,7 @@
       
         <p>关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。</p>
 <a id="more"></a>
+
 <ol>
 <li><p><strong>beforeCreated</strong>：</p>
 <p>初始化了一个空的Vue实例对象，只有一些默认的生命周期函数和默认事件</p>
@@ -437,9 +440,8 @@
 <p>再到created生命周期函数中执行一下刚才在beforeCreate中的代码，结果显示调用成功，表示这时候vue实例的属性和methods已经初始化了。</p>
 <p>3.<strong>beforeMount</strong>：</p>
 <p>挂载前调用，vue开始编译模版，在内存中生成一个最终编译好的模版字符串，然后把这个模版字符串渲染成内存中的DOM，但是这个模版是存在于DOM中的，并没有挂载到真正的页面上，</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><div id="app">   </div></span><br><span class="line"> 	<h1 id="h1">{{msg}}</h1>    </span><br><span class="line"> 	<!-- <input type="button" value="点击改变msg" @click="msg='No'"> -->    </span><br><span class="line"> </span></pre></td></tr></tbody></table></figure></div><br>
-
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//js        </span><br><span class="line">beforeMount(){   </span><br><span class="line">		// 模版已经在内存中编辑好了，但是并未渲染到页面       </span><br><span class="line"> 	// 在beforeMount执行的时候，页面中的元素还没有真正的被替换过来             					console.log(document.getElementById("h1").innerText);       </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/7.png" alt></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> //js        </span><br><span class="line">beforeMount(){</span><br><span class="line">           // 模版已经在内存中编辑好了，但是并未渲染到页面</span><br><span class="line">           // 在beforeMount执行的时候，页面中的元素还没有真正的被替换过来</span><br><span class="line">           console.log(document.getElementById("h1").innerText);</span><br><span class="line">       },</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/3.png" alt></p>
 <p>document.getElementById(“h1”).innerText的结果还是，表示页面上的内容实际上还没更改，因此但是这个模版是存在于DOM中的，并没有挂载到真正的页面上</p>
@@ -451,8 +453,7 @@
 <p>同样的我们将beforeMount函数中的代码放到mounted函数中再次执行，结果显示，页面上的h1标签中的msg已经被渲染，和data中的一致。这个阶段，将上一阶段在内存中编译好的模版渲染到页面上。</p>
 <p>5.<strong>beforeUpdate</strong>：</p>
 <p>组件运行前后的生命周期函数，更新前调用。会根据数据的改变调用，当执行beforeUpdate函数时data中的数据已经更新，但是页面上的数据还是旧的，所以此时页面和data中的数据没有同步，</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//html</span><br><span class="line"><div id="app">     </div></span><br><span class="line">	<h1 id="h1">{{msg}}</h1>      </span><br><span class="line">	<input type="button" value="点击改变msg" @click="msg='world'">   </span><br><span class="line"></span></pre></td></tr></tbody></table></figure></div><br>
-
+<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/7.png" alt></p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeUpdate(){            </span><br><span class="line"> //页面中h1标签中的内容            </span><br><span class="line"> console.log(document.getElementById("h1").innerText);         </span><br><span class="line"> //data中的数据            </span><br><span class="line">	console.log(this.msg);    </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/5.png" alt></p>
@@ -492,7 +493,7 @@
           });
       </script>
       
-    </article></div>
+    </div>
 
     
 
@@ -550,7 +551,7 @@
   
   
   
-  
+  </article>
 
 
   </div>
@@ -563,7 +564,7 @@
 
 
 
-        </main></div>
+        </div>
         
           
   
@@ -581,17 +582,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,7 +600,7 @@
                 
                   <a href="/daisy11100.github.io/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -625,7 +617,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -723,23 +715,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#h1"><span class="nav-number">1.</span> <span class="nav-text">{{msg}}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#h1"><span class="nav-number">2.</span> <span class="nav-text">{{msg}}</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -749,8 +724,8 @@
 
 
         
-      
-    
+      </div>
+    </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
@@ -842,7 +817,7 @@
     
 
     
-  
+  </div>
 
   
 
