@@ -92,27 +92,18 @@
 
 
 
-  <meta name="description" content="关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。">
-<meta name="keywords" content="vue">
+  <meta name="description" content="this永远指向调用它的对象。一般只有在被调用的时候才会进行绑定，并不是在声明时绑定，this的指向与声明位置无关，只与调用或者执行时有关。 默认绑定 12345function foo(){            console.log(this.a);        }        var a=2;        foo();//2  foo(）函数直接调用不带任何修饰的引用一般都为默认绑定">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue生命周期">
-<meta property="og:url" content="https://daisy11100.github.io/2019/07/25/vue生命周期/index.html">
+<meta property="og:title" content="this指向问题">
+<meta property="og:url" content="https://daisy11100.github.io/2019/08/14/81402/index.html">
 <meta property="og:site_name" content="段欣欣 | blog">
-<meta property="og:description" content="关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。">
+<meta property="og:description" content="this永远指向调用它的对象。一般只有在被调用的时候才会进行绑定，并不是在声明时绑定，this的指向与声明位置无关，只与调用或者执行时有关。 默认绑定 12345function foo(){            console.log(this.a);        }        var a=2;        foo();//2  foo(）函数直接调用不带任何修饰的引用一般都为默认绑定">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/1.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/2.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/7.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/3.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/4.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/7.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/5.png">
-<meta property="og:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/6.png">
-<meta property="og:updated_time" content="2019-07-25T08:58:57.189Z">
+<meta property="og:updated_time" content="2019-08-14T01:21:46.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue生命周期">
-<meta name="twitter:description" content="关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。">
-<meta name="twitter:image" content="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/1.png">
+<meta name="twitter:title" content="this指向问题">
+<meta name="twitter:description" content="this永远指向调用它的对象。一般只有在被调用的时候才会进行绑定，并不是在声明时绑定，this的指向与声明位置无关，只与调用或者执行时有关。 默认绑定 12345function foo(){            console.log(this.a);        }        var a=2;        foo();//2  foo(）函数直接调用不带任何修饰的引用一般都为默认绑定">
 
 
 
@@ -122,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="https://daisy11100.github.io/2019/07/25/vue生命周期/">
+  <link rel="canonical" href="https://daisy11100.github.io/2019/08/14/81402/">
 
 
 
@@ -132,7 +123,7 @@
   };
 </script>
 
-  <title>vue生命周期 | 段欣欣 | blog</title>
+  <title>this指向问题 | 段欣欣 | blog</title>
   
 
 
@@ -327,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daisy11100.github.io/daisy11100.github.io/2019/07/25/vue生命周期/">
+    <link itemprop="mainEntityOfPage" href="https://daisy11100.github.io/daisy11100.github.io/2019/08/14/81402/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daisy">
@@ -344,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue生命周期
+          <h1 class="post-title" itemprop="name headline">this指向问题
 
               
             
@@ -370,7 +361,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 15:48:32 / 修改时间：16:58:57" itemprop="dateCreated datePublished" datetime="2019-07-25T15:48:32+08:00">2019-07-25</time>
+              <time title="创建时间：2019-08-14 09:15:34 / 修改时间：09:21:46" itemprop="dateCreated datePublished" datetime="2019-08-14T09:15:34+08:00">2019-08-14</time>
             </span>
           
 
@@ -420,59 +411,47 @@
       
 
       
-        <p>关于vue生命周期这块，官方给的图自己也是看了很久，但是也没看出来个啥。。。后来就看视频学习，看完视频后才明白原来官方就是官方，给的图看起来很繁琐但是理解了之后就会发现都是有逻辑在里面的，简洁又不失逻辑。下面是自己在学习vue生命周期的一些学习总结。</p>
+        <p>this永远指向调用它的对象。一般只有在被调用的时候才会进行绑定，并不是在声明时绑定，this的指向与声明位置无关，只与调用或者执行时有关。</p>
+<p><strong>默认绑定</strong></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">        foo();<span class="comment">//2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>foo(）函数直接调用不带任何修饰的引用一般都为默认绑定，而this一般默认指向window。</p>
+<p>严格模式下，则为undefined。</p>
 <a id="more"></a>
 
-<ol>
-<li><p><strong>beforeCreated</strong>：</p>
-<p>初始化了一个空的Vue实例对象，只有一些默认的生命周期函数和默认事件</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue({        </span><br><span class="line">	el:"#app",       </span><br><span class="line">	data:{           </span><br><span class="line">		msg:"hello",      </span><br><span class="line">	},        </span><br><span class="line">	methods:{       </span><br><span class="line">		show:function(){        </span><br><span class="line">			console.log("show函数可以被调用了");         </span><br><span class="line">		}     </span><br><span class="line">	},      </span><br><span class="line">	beforeCreate(){         </span><br><span class="line">		// 在beforeCreate生命周期函数中，data中的数据和methods中的方法都还没有被初始化              	console.log(this.msg);        </span><br><span class="line">		this.show();       </span><br><span class="line">	},</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>隐式绑定</strong></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">var</span> obj={</span><br><span class="line">            a:<span class="number">3</span>,</span><br><span class="line">            foo:foo,</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">        obj.foo();   <span class="comment">//3</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/1.png" alt></p>
-<p>此时vue对象中的属性和methods还没被初始化，所以在这个生命周期函数中无法获取到data中的数据和methods中的方法。</p>
-<p>2.<strong>created</strong>：</p>
-<p>初始化属性和methods，data中的数据和methods中的方法在这个阶段后就可以获取到了。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">created(){       </span><br><span class="line">// 在created生命周期函数中，data中的数据和methods中的方法被初始化了，如果想操作data中的数据和方法，最早只能在created中操作          </span><br><span class="line">	console.log(this.msg);        </span><br><span class="line">	this.show();  </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<p>obj.foo()因为是obj调用的foo函数，所以这时this绑定了obj，this.a也当然是指obj对象里的a。所以结果为3。</p>
+<p>隐式绑定会出现一个问题———隐式丢失</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">      }</span><br><span class="line">      <span class="keyword">var</span> obj={</span><br><span class="line">          a:<span class="number">3</span>,</span><br><span class="line">          foo:foo,</span><br><span class="line">      }</span><br><span class="line">      <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">var</span> bar = obj.foo;</span><br><span class="line">      bar();<span class="comment">//2</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/2.png" alt></p>
-<p>再到created生命周期函数中执行一下刚才在beforeCreate中的代码，结果显示调用成功，表示这时候vue实例的属性和methods已经初始化了。</p>
-<p>3.<strong>beforeMount</strong>：</p>
-<p>挂载前调用，vue开始编译模版，在内存中生成一个最终编译好的模版字符串，然后把这个模版字符串渲染成内存中的DOM，但是这个模版是存在于DOM中的，并没有挂载到真正的页面上，</p>
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/7.png" alt></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> //js        </span><br><span class="line">beforeMount(){</span><br><span class="line">           // 模版已经在内存中编辑好了，但是并未渲染到页面</span><br><span class="line">           // 在beforeMount执行的时候，页面中的元素还没有真正的被替换过来</span><br><span class="line">           console.log(document.getElementById("h1").innerText);</span><br><span class="line">       },</span><br></pre></td></tr></tbody></table></figure>
+<p>bar是obj.foo函数的一个引用，引用的本身是obj.foo，不是foo()函数，所以this采取默认绑定，指向window，所以值为2；</p>
+<p><strong>显式绑定</strong></p>
+<p>使用call()和apply（）方法，这两种方法的第一个参数为一个对象，this会自动绑定到该对象上。</p>
+<p>call()和apply()的作用，调用一个对象的一个方法，用另一个对象替换当前对象</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">   }    </span><br><span class="line">   <span class="keyword">var</span> obj={</span><br><span class="line">       a:<span class="number">3</span>,</span><br><span class="line">       foo:foo,</span><br><span class="line">   }</span><br><span class="line">   <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">   foo.call(obj);</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/3.png" alt></p>
-<p>document.getElementById(“h1”).innerText的结果还是，表示页面上的内容实际上还没更改，因此但是这个模版是存在于DOM中的，并没有挂载到真正的页面上</p>
-<p>4.<strong>mounted</strong>：</p>
-<p>调用将内存中编辑好的模版渲染到页面上，实现挂载，mounted是实例创建期间的最后一个生命周期函数，到此为止，实例已经被完全创建</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mounted(){         </span><br><span class="line">	//将内存中编辑好的模版渲染到页面上，实现挂载       </span><br><span class="line">	// mounted是实例创建期间最后一个生命周期函数，到此为止，实例就被完全创建了，             		console.log(document.getElementById("h1").innerText);    </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<p>此例子用了call（）方法，传入参数obj，this则被强制绑定到obj上，所以结果为3.</p>
+<p><strong>call（）和apply（）方法的区别</strong>：</p>
+<p>apply（）：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function.apply(obj[,argArray])</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/4.png" alt></p>
-<p>同样的我们将beforeMount函数中的代码放到mounted函数中再次执行，结果显示，页面上的h1标签中的msg已经被渲染，和data中的一致。这个阶段，将上一阶段在内存中编译好的模版渲染到页面上。</p>
-<p>5.<strong>beforeUpdate</strong>：</p>
-<p>组件运行前后的生命周期函数，更新前调用。会根据数据的改变调用，当执行beforeUpdate函数时data中的数据已经更新，但是页面上的数据还是旧的，所以此时页面和data中的数据没有同步，</p>
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/7.png" alt></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeUpdate(){            </span><br><span class="line"> //页面中h1标签中的内容            </span><br><span class="line"> console.log(document.getElementById("h1").innerText);         </span><br><span class="line"> //data中的数据            </span><br><span class="line">	console.log(this.msg);    </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>接收两个参数，第一个为this的绑定对象，第二个则为数组或者类数组。</li>
+<li>apply（）第二个参数接收数组或者类数组，都会被转成一个类数组传入函数里，与函数中相应的参数对应。</li>
+</ul>
+<p>call（）：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function.call(obj[,arg1[, arg2[, [,.argN]]]]])</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/5.png" alt></p>
-<p>结果表明在<strong>beforeUpdat</strong>e这个阶段，当data中数据发生改变时，页面中的数据不会跟data中的数据同步。</p>
-<ol start="6">
-<li><strong>updated</strong>：更新后调用，页面和data数据实现一致</li>
-</ol>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">updated(){</span><br><span class="line">    //页面中h1标签中的内容 </span><br><span class="line">  //data中的数据   </span><br><span class="line">	console.log(document.getElementById("h1").innerText);       </span><br><span class="line">	console.log(this.msg);    </span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>可以接收多个参数</li>
+<li>第一个参数是this的绑定对象，如果不传，则this指向window；</li>
+<li>调用call（）时会立即执行，</li>
+<li>call（）方法可以接收任意个参数，从第二个参数开始，都会映射到func函数中相应的参数位置上，可以通过this来调用；但是如果把参数都按照一个数组传入，只会映射到第一个参数上，其余参数为undefined。</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span> (<span class="params">a,b,c</span>) </span>{}</span><br><span class="line"></span><br><span class="line">func.call(obj, <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="comment">// function接收到的参数实际上是 1,2,3</span></span><br><span class="line"></span><br><span class="line">func.call(obj, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="comment">// function接收到的参数实际上是 [1,2,3],undefined,undefined</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="/daisy11100.github.io/2019/07/25/vue生命周期/6.png" alt></p>
-<p>我们再把beforeUpdate函数中的代码放到Updated函数中执行，结果如上图所示，表示页面中的数据和data中的数据实现同步了。</p>
-<ol start="7">
-<li><p><strong>beforeDestory</strong>：</p>
-<p>实例销毁前调用，主要解绑一些监听事件等。执行<strong>beforeDestory</strong>函数时，就开始从执行阶段到销毁阶段了</p>
-</li>
-<li><p><strong>destoryed</strong>：</p>
-<p>销毁后，数据，方法、指令已经被完全销毁</p>
-</li>
-</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -517,7 +496,7 @@
         
         <div class="post-tags">
           
-            <a href="/daisy11100.github.io/tags/vue/" rel="tag"># vue</a>
+            <a href="/daisy11100.github.io/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -530,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/daisy11100.github.io/2019/07/19/一/" rel="next" title="前端常见面试题--第一弹">
-                <i class="fa fa-chevron-left"></i> 前端常见面试题--第一弹
+              <a href="/daisy11100.github.io/2019/08/14/81401/" rel="next" title="理解词法作用域和动态作用域">
+                <i class="fa fa-chevron-left"></i> 理解词法作用域和动态作用域
               </a>
             
           </div>
@@ -539,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/daisy11100.github.io/2019/08/03/803/" rel="prev" title="vue中如何使用swiper">
-                vue中如何使用swiper <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

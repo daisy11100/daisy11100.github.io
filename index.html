@@ -317,6 +317,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daisy11100.github.io/daisy11100.github.io/2019/08/14/81402/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daisy">
+      <meta itemprop="description" content="frontend">
+      <meta itemprop="image" content="/daisy11100.github.io/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="段欣欣 | blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/daisy11100.github.io/2019/08/14/81402/" class="post-title-link" itemprop="url">this指向问题</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-14 09:15:34 / 修改时间：09:21:46" itemprop="dateCreated datePublished" datetime="2019-08-14T09:15:34+08:00">2019-08-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>this永远指向调用它的对象。一般只有在被调用的时候才会进行绑定，并不是在声明时绑定，this的指向与声明位置无关，只与调用或者执行时有关。</p>
+<p><strong>默认绑定</strong></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">        foo();<span class="comment">//2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>foo(）函数直接调用不带任何修饰的引用一般都为默认绑定，而this一般默认指向window。</p>
+<p>严格模式下，则为undefined。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/daisy11100.github.io/2019/08/14/81402/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://daisy11100.github.io/daisy11100.github.io/2019/08/14/81401/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1279,7 +1436,7 @@
                 
                   <a href="/daisy11100.github.io/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
