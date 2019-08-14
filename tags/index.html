@@ -99,11 +99,13 @@
 <meta property="og:site_name" content="段欣欣 | blog">
 <meta property="og:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-10T08:22:58.766Z">
+<meta property="og:updated_time" content="2019-08-14T02:33:59.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签">
 <meta name="twitter:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 
+
+  
 
 
   <link rel="alternate" href="/daisy11100.github.io/atom.xml" title="段欣欣 | blog" type="application/atom+xml">
@@ -347,25 +349,26 @@
       <div class="post-body">
         
         
-          <script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+              
+              
+                
+                  
+                
+              
+                
+                  
+                
+              
+              目前共计 2 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              
+                <a href="/daisy11100.github.io/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/daisy11100.github.io/tags/vue/" style="font-size: 12px; color: #ccc">vue</a>
+              
+            </div>
+          </div>
         
       </div>
       
@@ -441,12 +444,16 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/daisy11100.github.io/categories/">
+                    
+                  
+                    
                     
                       
                     
                     <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
@@ -456,6 +463,10 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/daisy11100.github.io/tags/">
+                    
+                  
+                    
                     
                       
                     
@@ -463,7 +474,7 @@
                     
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
