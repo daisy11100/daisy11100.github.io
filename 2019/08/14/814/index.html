@@ -93,15 +93,16 @@
 
 
   <meta name="description" content="一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用1、闭包的概念：指有权访问另一个函数作用域中的变量的函数，一般情况就是在一个函数中包含另一个函数。 2、闭包的作用：访问函数内部变量、保持函数在环境中一直存在，不会被垃圾回收机制处理 因为函数内部声明 的变量是局部的，只能在函数内部访问到，但是函数外部的变量是对函数内部可见的，这就是作用域链的特点了。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="段欣欣 | blog">
+<meta property="og:title" content="闭包的实现原理和作用">
 <meta property="og:url" content="https://daisy11100.github.io/2019/08/14/814/index.html">
 <meta property="og:site_name" content="段欣欣 | blog">
 <meta property="og:description" content="一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用1、闭包的概念：指有权访问另一个函数作用域中的变量的函数，一般情况就是在一个函数中包含另一个函数。 2、闭包的作用：访问函数内部变量、保持函数在环境中一直存在，不会被垃圾回收机制处理 因为函数内部声明 的变量是局部的，只能在函数内部访问到，但是函数外部的变量是对函数内部可见的，这就是作用域链的特点了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-14T00:56:36.964Z">
+<meta property="og:updated_time" content="2019-08-14T01:03:41.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="段欣欣 | blog">
+<meta name="twitter:title" content="闭包的实现原理和作用">
 <meta name="twitter:description" content="一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用1、闭包的概念：指有权访问另一个函数作用域中的变量的函数，一般情况就是在一个函数中包含另一个函数。 2、闭包的作用：访问函数内部变量、保持函数在环境中一直存在，不会被垃圾回收机制处理 因为函数内部声明 的变量是局部的，只能在函数内部访问到，但是函数外部的变量是对函数内部可见的，这就是作用域链的特点了。">
 
 
@@ -122,7 +123,7 @@
   };
 </script>
 
-  <title> | 段欣欣 | blog</title>
+  <title>闭包的实现原理和作用 | 段欣欣 | blog</title>
   
 
 
@@ -334,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">闭包的实现原理和作用
 
               
             
@@ -360,7 +361,7 @@
                 
               
 
-              <time title="创建时间：2019-08-14 08:34:19 / 修改时间：08:56:36" itemprop="dateCreated datePublished" datetime="2019-08-14T08:34:19+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 08:34:19 / 修改时间：09:03:41" itemprop="dateCreated datePublished" datetime="2019-08-14T08:34:19+08:00">2019-08-14</time>
             </span>
           
 
@@ -417,7 +418,7 @@
 
 <p>子级可以向父级查找变量，逐级查找，找到为止</p>
 <p>因此我们可以在函数内部再创建一个函数，这样对内部的函数来说，外层函数的变量都是可见的，然后我们就可以访问到他的变量了。</p>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><script></span><br><span class="line">   <span class="function"><span class="keyword">function</span>  <span class="title">bar</span>(<span class="params"></span>)</span>{</span><br><span class="line">       <span class="comment">//外层函数声明的变量</span></span><br><span class="line">       <span class="keyword">var</span> value=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">           <span class="built_in">console</span>.log(value);</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> foo();</span><br><span class="line">   };</span><br><span class="line">   <span class="keyword">var</span> bar2=bar;</span><br><span class="line">   <span class="comment">//实际上bar()函数并没有因为执行完就被垃圾回收机制处理掉</span></span><br><span class="line">   <span class="comment">//这就是闭包的作用，调用bar()函数，就会执行里面的foo函数，foo这时就会访问到外层的变量</span></span><br><span class="line">bar2();</span><br><span class="line">  <<span class="regexp">/script></span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span>  <span class="title">bar</span>(<span class="params"></span>)</span>{</span><br><span class="line">       <span class="comment">//外层函数声明的变量</span></span><br><span class="line">       <span class="keyword">var</span> value=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>{</span><br><span class="line">           <span class="built_in">console</span>.log(value);</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> foo();</span><br><span class="line">   };</span><br><span class="line">   <span class="keyword">var</span> bar2=bar;</span><br><span class="line">   <span class="comment">//实际上bar()函数并没有因为执行完就被垃圾回收机制处理掉</span></span><br><span class="line">   <span class="comment">//这就是闭包的作用，调用bar()函数，就会执行里面的foo函数，foo这时就会访问到外层的变量</span></span><br><span class="line">bar2();</span><br></pre></td></tr></tbody></table></figure>
 
 <p>foo（）包含bar（）内部作用域的闭包，使得该作用域能够一直存活，不会被垃圾回收机制处理掉，这就是闭包的作用，以供foo（）在任何时间进行引用。</p>
 <p>3、<strong>闭包的优点：</strong></p>
@@ -465,7 +466,7 @@
             });
             document.body.appendChild(img);
           });
-      </script></span></pre></td></tr></tbody></table></figure>
+      </script>
       
     </div>
 
@@ -485,6 +486,15 @@
     
 
     <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/daisy11100.github.io/tags/js/" rel="tag"># js</a>
+          
+        </div>
       
 
       
@@ -606,7 +616,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -699,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用"><span class="nav-number">1.</span> <span class="nav-text">一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用"><span class="nav-number">1.</span> <span class="nav-text">一、闭包的实现原理和作用，可以列举几个开发中闭包的实际应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、理解堆栈溢出和内存泄漏的原理，如何防止"><span class="nav-number">2.</span> <span class="nav-text">二、理解堆栈溢出和内存泄漏的原理，如何防止</span></a></li></ol></div>
             
 
           </div>
